@@ -1,0 +1,463 @@
+*{
+        margin: 0;
+        padding: 0;            /* (*) sélectionne tous les éléments pour appliquer un style commun */
+      
+
+}
+body{
+  width: 100%;  /* argeur à 100% de la fenêtre*/
+  height: 100%;  /*hauteur à 100% de la fenêtre*/
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+.logo{
+ 
+position: relative;
+top: 55px;
+left: 10px;
+ }
+.p1{
+    text-align: center;
+    font-size: 60px;
+    position: relative;
+    top: -8px;
+}
+
+
+
+
+
+
+.liste{
+   position: relative;
+   top: -55px;
+   right: 570px;
+
+} 
+.headt{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+    /*: Utilise Flexbox pour la mise en page du conteneur .head*/
+    background-color: white;
+    padding: 10px 0;
+
+}
+
+#alg{
+  width: 100%;
+  height: 800px;
+  background-image: url("image/ramadan-4159961_1280.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+  }
+  #phla{
+    width: 100%;
+    height: 800px;
+    background-image: url("image/jerusalem-4657867_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #maka{
+    width: 100%;
+    height: 800px;
+    
+    background-image: url("image/kaaba-3338032_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+     }
+   
+  
+
+
+
+
+.cardContainer {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    position: relative;
+    width: 220px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+    margin: 9px;
+  }
+  
+  .city {
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+  
+  .weather {
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 1.2px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .temp {
+    font-size: 1.8em;
+    color: white;
+  }
+  
+  .minmaxContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .min,
+  .max {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 20px;
+    gap: 4px;
+  }
+  
+  .max {
+    align-items: flex-start;
+    border-left: 2px solid white;
+  }
+  
+  .maxHeading,
+  .minHeading {
+    font-size: 0.7em;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .maxTemp,
+  .minTemp {
+    font-size: 0.6em;
+    font-weight: 500;
+    color: rgb(197, 197, 197);
+  }
+  
+  .cardContainer::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    position: absolute;
+    background-color: rgb(144, 161, 255);
+    z-index: -1;
+    border-radius: 50%;
+    left: 100px;
+    top: 50px;
+    transition: all 1s;
+  }
+  
+  .cardContainer:hover::before {
+    transform: translate(-50px, 50px);
+  }
+.tim{
+    display: flex;
+    margin: 20px;
+    position: relative;
+    top: 200px;
+    left: 15px;
+}  
+
+
+.cardt {
+  width: 350px;
+  height: 80px;
+  position: relative;
+  top: 60px;
+  padding: 25px;
+  background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #FFF7B1 0%, rgba(255, 255, 255, 0) 71.88%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+
+.cardt:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: -35px;
+  top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.7);
+}
+
+.cloud {
+  width: 250px;
+}
+
+.front {
+  padding-top: 45px;
+  margin-left: 25px;
+  display: inline;
+  position: absolute;
+  z-index: 11;
+  animation: clouds 8s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.back {
+  margin-top: -30px;
+  margin-left: 150px;
+  z-index: 12;
+  animation: clouds 12s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.right-front {
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -25px;
+  z-index: 5;
+}
+
+.left-front {
+  width: 65px;
+  height: 65px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.right-back {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -20px;
+  z-index: 5;
+}
+
+.left-back {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+  background: linear-gradient(to right, #fcbb04, #fffc00);
+  border-radius: 60px;
+  display: inline;
+  position: absolute;
+}
+
+.sunshine {
+  animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(15px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+.cardt-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardt-header span:first-child {
+  word-break: break-all;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 135%;
+  color: rgba(23, 20, 11, 0.66);
+}
+
+.card-header span:last-child {
+  /* font-weight: 900; */
+  font-size: 15px;
+  line-height: 135%;
+  color: rgba(0, 0, 0, 0.33);
+}
+
+.tempt {
+  position: absolute;
+  left: 25px;
+  top: 55px;
+  /* bottom: 16px; */
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
+}
+
+.temp-scale {
+  width: 80px;
+  height: 36px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 9px;
+}
+
+.temp-scale span {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 134.49%;
+  color: rgba(218, 113, 33, 0.66);
+}
+
+
+
+
+
+:focus {
+  outline: 0;
+  border-color: #2260ff;
+  box-shadow: 0 0 0 4px #b5c9fc;
+}
+
+.mydict div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.mydict input[type="radio"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.mydict input[type="radio"]:checked + span {
+  box-shadow: 0 0 0 0.0625em #0043ed;
+  background-color: #dee7ff;
+  z-index: 1;
+  color: #0043ed;
+}
+
+label span {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em .75em;
+  position: relative;
+  margin-left: .0625em;
+  box-shadow: 0 0 0 0.0625em #b5bfd9;
+  letter-spacing: .05em;
+  color: #3e4963;
+  text-align: center;
+  transition: background-color .5s ease;
+}
+
+label:first-child span {
+  border-radius: .375em 0 0 .375em;
+}
+
+label:last-child span {
+  border-radius: 0 .375em .375em 0;
+}
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
